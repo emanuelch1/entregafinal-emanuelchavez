@@ -1,91 +1,135 @@
-//primera pre entrega
-/*
-function saludo(){
-    alert("BIENVENIDO A NUESTRA WEB DE COMPRA SMART TV  ONLINE ")
-}
-saludo()
 
-let nombreUsuario = prompt("INGRESE SU NOMBRE Y APELLIDO")
 
-function nombre(nombre){
-    alert("HOLA " + nombreUsuario + " A CONTINUACION INGRESE QUE MARCA DECEA COMPRAR")
-}
-nombre()
+const productos = [
+    {
+        id:1,
+        nombre:"SMART TV 32' SAMSUMG",
+        precio:120000,
+        descripcion:"Samsung UN32AU5500jC, resolución HD (3840 x 2160 píxeles) y cuenta con Crystal Processor 4K. Su panel LED ofrece además la característica de alto rango dinámico (HDR), que aumenta la expresión brillante del televisor para que puedas disfrutar de un inmenso espectro de colores y detalles visuales, incluso en las escenas más oscuras.",
+        stock:5,
+        urlImg:"./img/tv32.jpg"
+    },
 
-let nombreProducto = prompt("ESCRIBA EL NOMBRE DE LA MARCA DE SU SMART TV: SAMSUM O LG (PARA SALIR ESCRIBA LA PALABRA ESC)")
+    {
+        id:2,
+        nombre:"SMART TV 43' SAMSUMG",
+        precio:150000,
+        descripcion:"El Smart TV Samsung UN43AU7000GC, resolución FULL HD (3840 x 2160 píxeles) y cuenta con Crystal Processor 4K. Su panel LED ofrece además la característica de alto rango dinámico (HDR), que aumenta la expresión brillante del televisor para que puedas disfrutar de un inmenso espectro de colores y detalles visuales, incluso en las escenas más oscuras.",
+        stock:5,
+        urlImg:"./img/tv43.jpg",
+    },
 
-while(nombreProducto != "esc"){
-    let cantidadProducto = parseFloat(prompt("CANTIDAD"))
-    let pulgada = parseFloat(prompt("PULGADA= 32', 55', 65', 75'"))
-    
-    if (pulgada<=32){
-     alert("el valor de smart tv 32' es de : $120000")
-    }else if (pulgada<=55){
-        alert("el valor de smart tv 55' es de : $180000")
-    }else if (pulgada<=65){
-        alert("el valor de smart tv 65' es de : $200000")
-    }else if (pulgada<=75){
-        alert("el valor de smart tv 75' es de : $250000")
-    }else if (pulgada<=78){
-        alert("ese producto no existe")
+    {
+        id:3,
+        nombre:"SMART TV 55' SAMSUMG",
+        precio:180000,
+        descripcion:"El Smart TV Samsung UN55AU7000GC, resolución HD (3840 x 2160 píxeles) y cuenta con Crystal Processor 4K. Su panel LED ofrece además la característica de alto rango dinámico (HDR), que aumenta la expresión brillante del televisor para que puedas disfrutar de un inmenso espectro de colores y detalles visuales, incluso en las escenas más oscuras.",
+        stock:5,
+        urlImg:"./img/tv55.jpg",
+    },
+    {
+        id:4,
+        nombre:"SMART TV 65' SAMSUMG",
+        precio:200000,
+        descripcion:"El Smart TV Samsung UN65AU7000, resolución FULL HD (3840 x 2160 píxeles) y cuenta con Crystal Processor 4K. Su panel LED ofrece además la característica de alto rango dinámico (HDR), que aumenta la expresión brillante del televisor para que puedas disfrutar de un inmenso espectro de colores y detalles visuales, incluso en las escenas más oscuras.",
+        stock:5,
+        urlImg:"./img/tv65.jpg",
+    },
+    {
+        id:5,
+        nombre:"SMART TV 70' SAMSUMG",
+        precio:250000,
+        descripcion:"El Smart TV Samsung UN70AU7000GC, resolución FULL HD (3840 x 2160 píxeles) y cuenta con Crystal Processor 4K. Su panel LED ofrece además la característica de alto rango dinámico (HDR), que aumenta la expresión brillante del televisor para que puedas disfrutar de un inmenso espectro de colores y detalles visuales, incluso en las escenas más oscuras.",
+        stock:5,
+        urlImg:"./img/tv70.jpg",
+    },
+    {
+        id:6,
+        nombre:"LG 32'UHD LED ThinQ ",
+        precio: 110000,
+        descripcion:"Led HD, Procesador Inteligente 5ta generación 5, Active HDR, Sonido Virtual Surround Plus, LG ThinQ AI: Inteligencia Artificial ",
+        stock:5,
+        urlImg:"./img/lg32.jpg",
+    },
+    {
+        id:7,
+        nombre:"LG 43'UHD LED ThinQ ",
+        precio:130000,
+        descripcion:"LED UHD, Procesador Inteligente , HDR Activo 4K, Sonido Ultra Surround, LG AI ThinQ: Inteligencia Artificia",
+        stock:5,
+        urlImg:"./img/lg43.jpg",
+    },
+    {
+        id:8,
+        nombre:"LG 55' UHD LED AI ThinQ 4K",
+        precio:140000,
+        descripcion:"LED 4K UHD, Procesador Inteligente α5 4K, HDR Activo 4K, Sonido Ultra Surround, LG AI ThinQ: Inteligencia Artificial",
+        stock:5,
+        urlImg:"./img/lg55.jpg",
+    },
+    {
+        id:9,
+        nombre:"LG 60' UHD LED AI ThinQ 4K ",
+        precio:190000,
+        descripcion:"LED 4K UHD, Procesador Inteligente α5 4K, HDR Activo 4K, Sonido Ultra Surround, LG AI ThinQ: Inteligencia Artificial",
+        stock:5,
+        urlImg:"./img/lg60.jpg",
+    },
+    {
+        id:10,
+        nombre:"LG 70' UHD LED AI ThinQ 4K",
+        precio:220000,
+        descripcion:"LED 4K UHD, Procesador Inteligente α5 4K, HDR Activo 4K, Sonido Ultra Surround, LG AI ThinQ: Inteligencia Artificial",
+        stock:5,
+        urlImg:"./img/lg70.jpg",
     }
-    console.log("el usuario " + nombreUsuario + " quiere comprar el producto smart TV: " + nombreProducto + " , cantidad: " + cantidadProducto + " pulgadas " + pulgada)
-    alert(nombreUsuario + " SU PEDIDO ES un smart tv " + nombreProducto + " , de " + pulgada + "' cantidad  " + cantidadProducto)
-    nombreProducto = prompt("ESCRIBA EL NOMBRE DE LA MARCA DE SU SMART TV (PARA SALIR ESCRIBA LA PALABRA ESC)")
+]
+
+const carrito = JSON.parse(localStorage.getItem("carrito")) ?? []
+
+
+const verProducto = ({id,nombre,precio,descripcion,stock,urlImg}) =>{
+    const tarjetasProductos = document.querySelector("#tarjetasProductos")
+    const tarjeta = document.createElement("div")
+    tarjeta.className = "tarjeta"
+    tarjeta.innerHTML=`
+                       <img class="img"src="${urlImg}" alt="">
+                       <div class="contenido">
+                       <h3 class="nombre">${nombre}</h3>
+                       <p class="descripcion">${descripcion}</p>
+                       </div>
+                       <span class="precio"><b>Precio:</b> $${precio}</span>
+                       <form class="form" id="formCarrito${id}">
+                       <input name="id" type="hidden" value="${id}">
+                       <input name="cantidad" type="number" value="1" min="1" max="${stock}">
+                       <button type="submit">Comprar</button>
+                       </form>
+    `
+    tarjetasProductos.append(tarjeta)
 }
-*/
-
-// segunda pre entrega
-
-class Pedido{
-    constructor(cliente,direccion,pulgada,cantidad){
-        this.cliente = cliente
-        this.direccion = direccion
-        this.pulgada = pulgada
-        this.cantidad= cantidad
+const agregarCarrito = (id) =>{
+    const formCarrito = document.querySelector("#formCarrito"+ id)
+    formCarrito.addEventListener("submit",(e)=>{
+        e.preventDefault()
+        const cantidad = e.target.children["cantidad"].value
         
-    }
-    
+        carrito.push({
+            id,
+            cantidad
+        })
+       
+    localStorage.setItem("carrito",JSON.stringify(carrito))
+    })
 }
-const pedidos = []
-let continuar = true
 
-function saludo(){
-    alert("BIENVENIDO A NUESTRA WEB DE COMPRA SMART TV ONLINE ")
+const verProductos = () =>{
+    productos.forEach(producto =>{
+        if(producto.stock !=0){
+            verProducto(producto)
+            agregarCarrito(producto.id)
+        }
+        
+    })
 }
-saludo()
 
-while(continuar===true){
-    const cliente = prompt("INGRESE SU NOMBRE Y APELLIDO")
-    const direccion = prompt("INGRESE SU DIRECCION PARA EL ENVIO")
-    const pulgada = parseFloat( prompt("INGRESE LAS PULGADAS"))
-    if (pulgada<=32){
-        alert("el valor de smart tv 32' es de : $120000")
-       }else if (pulgada<=55){
-           alert("el valor de smart tv 55' es de : $180000")
-       }else if (pulgada<=65){
-           alert("el valor de smart tv 65' es de : $200000")
-       }else if (pulgada<=75){
-           alert("el valor de smart tv 75' es de : $250000")
-       }else if (pulgada<=78){
-           alert("ese producto no existe")
-       }
-    const cantidad = parseFloat(prompt("CANTIDAD"))
-    
-    const pedido = new Pedido(cliente,direccion,pulgada,cantidad)
-    pedidos.push(pedido)
-    alert(cliente + " SU DIRECCION DE ENVIO ES " + direccion + " , LA PULGADA DE SU SMART TV ES  " + pulgada + "' cantidad  " + cantidad)
-    continuar=confirm("QUIERE CARGAR MAS PEDIDOS")
-}
-console.log(pedidos)
-
-continuar=confirm("QUIERE ELIMINAR ALGO DE SU PEDIDO")
-while(continuar===true){
-    const eliminarPulgadas =parseFloat( prompt("INGRESE LAS PULGADAS"))
-    const index = pedidos.findIndex((pedido)=> pedido.pulgada === eliminarPulgadas)
-    if(index != -1){
-        pedidos.splice(index,1)
-        alert("SE ELIMINO SU PEDIDO")
-    }
-    continuar=confirm("QUIERE ELIMINAR ALGO MAS DE SU PEDIDO")
-}
+verProductos()

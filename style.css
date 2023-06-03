@@ -1,0 +1,123 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.tituloPrincipal{
+   display: flex;
+   text-align: center;
+   font-size: 80px;
+   width: 800px;
+   margin: auto;
+   margin-top: 150px; 
+}
+.subTitulo{
+   display: flex;
+   text-align: center;
+   font-size: 40px;
+   width: 800px;
+   margin: auto;
+
+}
+
+.info{
+   display: flex;
+   margin: 20px;
+   text-align: center;
+
+}
+
+
+
+
+#tarjetasProductos{
+   display: flex;
+   flex-wrap: wrap;
+
+}
+.tarjeta{
+   width: 250px;
+   border: 1px solid;
+   border-radius: 5px;
+   overflow: hidden;
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   margin: 10px;
+   padding: 10px;
+   text-align: center;
+}
+ .tarjeta img{
+   width:80%;
+   object-fit: cover;
+ }
+
+ 
+ 
+ .tarjeta button{
+   background-color: rgb(25, 188, 203);
+   border-radius: 5px;
+ }
+ 
+ 
+ .descripcion{
+   margin-top: 10px;
+   white-space: pre-wrap;
+   
+ }
+.precio{
+   font-size: 20px;
+}
+
+.carrito{
+   font-size: 30px;
+}
+
+.carrito span{
+   background-color: aqua;
+   width: 20px;
+   height: 20px;
+   border-radius: 50%;
+   text-align: center;
+}
+
+
+/*footer*/
+.footer{
+   background-color: #000000;
+}
+.piep{   
+   background: #24C6DC;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #514A9D, #24C6DC);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #514A9D, #24C6DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+   text-align:center;
+   font-size: 50px;
+   list-style: none;
+   width: 100%;
+   padding: 10px;
+}
+.redes{
+   display: flex;
+   justify-content:space-evenly;
+   color: white;
+}
+.derecho{
+   text-align: center;
+   font-size: 20px;
+   margin-top: 30px;
+   color: white;
+
+}
+
+.datos{
+   display: block;
+   font-size: 20px;
+   margin: 30px;
+   color: white;
+
+}
+.contenidodatos{
+   margin: 10px;
+   color: white;
+}
