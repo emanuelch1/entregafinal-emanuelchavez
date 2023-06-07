@@ -115,9 +115,14 @@ const agregarCarrito = (id) =>{
         
         carrito.push({
             id,
-            cantidad
+            cantidad,
         })
        
+        
+        console.log(carrito)
+        const numeroCarrito = document.querySelector("#agregarCarrito")
+        numeroCarrito.innerText = cantidad 
+
     localStorage.setItem("carrito",JSON.stringify(carrito))
     })
 }
