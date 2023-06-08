@@ -121,10 +121,17 @@ const agregarCarrito = (id) =>{
         
         console.log(carrito)
         const numeroCarrito = document.querySelector("#agregarCarrito")
-        numeroCarrito.innerText = cantidad 
+        numeroCarrito.innerText = cantidad
+        Swal.fire({
+            icon: 'success',
+            title: 'Felicidades!!!',
+            text: 'Usted agrego un producto SMART TV al Carrito.',
+           
+          }) 
 
     localStorage.setItem("carrito",JSON.stringify(carrito))
     })
+   
 }
 
 const verProductos = () =>{
